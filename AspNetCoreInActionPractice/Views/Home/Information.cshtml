@@ -1,0 +1,27 @@
+﻿@model Employee
+@{ 
+    ViewBag.Title = "Employee Information";
+}
+
+
+<div class="row justify-content-center" style="margin-top:10%;">
+    <div class="col-md-6">
+        <div class="card mt-2">
+            <div class="card-header text-center text-primary">
+                <h4>@Model.FullName</h4>
+            </div>
+            <img src="~/images/jjc.jpg" class="rounded-circle card-img-top" asp-append-version="true" />
+            <div class="card-body text-center">
+                <h4>Id: @Model.EmployeeId</h4>
+                <h4>Email: @Model.Email</h4>
+                <h4>Department Name: @Model.Department.DepartmentName</h4>
+                <h4>Department Id: @Model.Department.Id.ToString()</h4>
+            </div>
+            <div class="card-footer text-center">
+                <a asp-action="Index" asp-controller="Home" class="btn btn-primary btn-sm mt-2">Back</a>
+                <a asp-action="Edit" asp-controller="Home" class="btn btn-primary btn-sm mt-2" asp-route-id="@Model.EmployeeId">Edit</a>
+                <a asp-action="" asp-controller="Home" class="btn btn-danger btn-sm mt-2">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
